@@ -42,10 +42,12 @@
 
 - name: clone all roles
   git:
-    repo: "{{ item }}"
+    repo: "{{ item.name }}"
     dest: "{{ git_repository_destination }}"
     accept_hostkey: yes
+    versoin: "{{ item.version | default("HEAD") }}"
   with_items: "{{ git_repositories }}"
+  become: yes
   become_user: "{{ git_username }}"
   when:
     - git_repository_destination is defined
