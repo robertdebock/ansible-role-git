@@ -8,10 +8,24 @@
   until: git_install_git is succeeded
   retries: 3
 
+- name: see if the specified user exists
+  getent:
+    database: passwd
+    key: "{{ git_username }}"
+    fail_key: no
+
+- name: show shit
+  debug:
+    var: getent_passwd
+
 - name: create directory for git configuration
   file:
     path: /home/{{ git_username }}
     state: directory
+    owner: "{{ git_username }}"
+    group: "{{ git_groupname }}"
+  when:
+    - getent_passwd.user_name is defined
 
 - name: place git configuration
   template:
@@ -21,6 +35,8 @@
     - git_user_email is defined
     - git_user_name is defined
     - git_username is defined
+  when:
+    - getent_passwd.user_name is defined
 
 - name: create repository_destination
   file:
@@ -32,6 +48,7 @@
     - git_repository_destination is defined
     - git_username is defined
     - git_groupname is defined
+    - getent_passwd.user_name is defined
 
 - name: clone all roles
   git:
@@ -46,3 +63,4 @@
     - git_repository_destination is defined
     - git_repositories is defined
     - git_username is defined
+    - getent_passwd.user_name is defined
