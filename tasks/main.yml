@@ -8,6 +8,11 @@
   until: git_install_git is succeeded
   retries: 3
 
+- name: create directory for git configuration
+  file:
+    path: /home/{{ git_username }}
+    state: directory
+
 - name: place git configuration
   template:
     src: gitconfig.j2
