@@ -30,6 +30,24 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for git
 
+# The username to place the gitconfig file.
+git_username: johndoe
+
+# The group to own directories.
+git_groupname: "{{ git_username }}"
+
+# Settings for git configuration.
+git_user_email: johndoe@example.com
+git_user_name: John Doe
+
+# Where to place the copies of the repositories.
+git_repository_destination: /home/{{ git_username }}/Documents/github.com/{{ git_username }}
+
+# The repositories to check out.
+# git_repositories:
+#   - https://github.com/robertdebock/ansible-role-bootstrap.git
+#   - ssh://git@github.com/robertdebock/ansible-role-bootstrap.git
+
 # To update packages this role places on the system, set `git_package_state` to `latest`.
 git_package_state: present
 
