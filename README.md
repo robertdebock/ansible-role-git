@@ -47,7 +47,7 @@ git_repository_destination: /home/{{ git_username }}/Documents/github.com/{{ git
 # git_repositories:
 #   - name: https://github.com/robertdebock/ansible-role-bootstrap.git
 #     version: 2.2.4
-#   - ssh://git@github.com/robertdebock/ansible-role-bootstrap.git
+#   - name: ssh://git@github.com/robertdebock/ansible-role-bootstrap.git
 
 # To update packages this role places on the system, set `git_package_state` to `latest`.
 git_package_state: present
