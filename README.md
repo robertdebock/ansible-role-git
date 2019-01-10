@@ -30,7 +30,7 @@ These variables are set in `defaults/main.yml`:
 ---
 # defaults file for git
 
-# The username to place the gitconfig file.
+# The system username in /home where to place the gitconfig file.
 git_username: johndoe
 
 # The group to own directories.
