@@ -45,7 +45,7 @@
     repo: "{{ item.name }}"
     dest: "{{ git_repository_destination }}"
     accept_hostkey: yes
-    versoin: "{{ item.version | default("HEAD") }}"
+    version: "{{ item.version | default('HEAD') }}"
   with_items: "{{ git_repositories }}"
   become: yes
   become_user: "{{ git_username }}"
