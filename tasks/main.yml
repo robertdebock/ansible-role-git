@@ -31,7 +31,6 @@
     - git_user_email is defined
     - git_user_name is defined
     - git_username is defined
-  when:
     - getent_passwd.user_name is defined
 
 - name: create repository_destination
