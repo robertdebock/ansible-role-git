@@ -1,17 +1,5 @@
 ---
 # tasks file for git
-- name: test veriables and environment
-  assert:
-    that:
-      - git_username is defined
-      - git_group is defined
-      - git_user_email is defined
-      - git_user_name is defined
-      - git_username is defined
-      - git_groupname is defined
-      - git_repository_destination is defined
-      - git_repositories is defined
-
 - name: install git
   package:
     name: "{{ git_packages }}"
