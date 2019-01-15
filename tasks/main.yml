@@ -14,6 +14,10 @@
     key: "{{ git_username }}"
     fail_key: no
 
+- name: show getent_passwd
+  debug:
+    msg: "getent_passwd: {{ getent_passwd }}"
+
 - name: create directory for git configuration
   file:
     path: /home/{{ git_username }}
