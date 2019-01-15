@@ -25,7 +25,7 @@
     owner: "{{ git_username }}"
     group: "{{ git_groupname }}"
   when:
-    - getent_passwd[git_username] is defined
+    - getent_passwd[git_username] != "None"
 
 - name: place git configuration
   template:
@@ -35,7 +35,7 @@
     - git_user_email is defined
     - git_user_name is defined
     - git_username is defined
-    - getent_passwd[git_username] is defined
+    - getent_passwd[git_username] != "None"
 
 - name: create repository_destination
   file:
@@ -47,7 +47,7 @@
     - git_repository_destination is defined
     - git_username is defined
     - git_groupname is defined
-    - getent_passwd[git_username] is defined
+    - getent_passwd[git_username] != "None"
 
 - name: clone all roles
   git:
@@ -62,4 +62,4 @@
     - git_repository_destination is defined
     - git_repositories is defined
     - git_username is defined
-    - getent_passwd[git_username] is defined
+    - getent_passwd[git_username] != "None"
