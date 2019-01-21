@@ -45,11 +45,13 @@ git_user_name: John Doe
 # Where to place the copies of the repositories.
 git_repository_destination: /home/{{ git_username }}/Documents/github.com/{{ git_username }}
 
-# The repositories to check out.
+# The repositories to check out, bootstrap is pinned to a version, java will get HEAD/latest.
 # git_repositories:
-#   - name: https://github.com/robertdebock/ansible-role-bootstrap.git
+#   - repo: https://github.com/robertdebock/ansible-role-bootstrap.git
+#     dest: bootstrap
 #     version: 2.2.4
-#   - name: ssh://git@github.com/robertdebock/ansible-role-bootstrap.git
+#   - repo: ssh://git@github.com/robertdebock/ansible-role-java.git
+#     dest: java
 
 # To update packages this role places on the system, set `git_package_state` to `latest`.
 git_package_state: present

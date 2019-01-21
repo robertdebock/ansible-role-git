@@ -51,8 +51,8 @@
 
 - name: clone all roles
   git:
-    repo: "{{ item.name }}"
-    dest: "{{ git_repository_destination }}/{{ item.name | url('path') | split('/')[2] | split('.git')[0] }}"
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
     accept_hostkey: yes
     version: "{{ item.version | default('HEAD') }}"
   with_items: "{{ git_repositories }}"
