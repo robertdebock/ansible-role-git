@@ -13,10 +13,8 @@
     database: passwd
     key: "{{ git_username }}"
     fail_key: no
-
-- name: show getent_passwd
-  debug:
-    msg: "getent_passwd: {{ getent_passwd }}"
+  when:
+    - git_username is defined
 
 - name: create directory for git configuration
   file:
@@ -25,6 +23,7 @@
     owner: "{{ git_username }}"
     group: "{{ git_groupname }}"
   when:
+    - getent_passwd is defined
     - getent_passwd[git_username] != none
 
 - name: place git configuration
@@ -44,8 +43,8 @@
     owner: "{{ git_username }}"
     group: "{{ git_groupname }}"
   when:
-    - git_repository_destination is defined
     - git_username is defined
+    - git_repository_destination is defined
     - git_groupname is defined
     - getent_passwd[git_username] != none
 
@@ -59,7 +58,7 @@
   become: yes
   become_user: "{{ git_username }}"
   when:
-    - git_repository_destination is defined
     - git_repositories is defined
+    - git_repository_destination is defined
     - git_username is defined
     - getent_passwd[git_username] != none
