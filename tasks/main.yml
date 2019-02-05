@@ -54,7 +54,7 @@
     dest: "{{ git_repository_destination }}/{{ item.dest }}"
     accept_hostkey: yes
     version: "{{ item.version | default('HEAD') }}"
-    force: "{{ item.force | default('no') }}"
+    force: "{{ item.force | default(git_force) }}"
   with_items: "{{ git_repositories }}"
   become: yes
   become_user: "{{ git_username }}"

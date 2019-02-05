@@ -60,6 +60,11 @@ These variables are set in `defaults/main.yml`:
 # Where to place the copies of the repositories.
 git_repository_destination: /home/{{ git_username }}/Documents/github.com/{{ git_username }}
 
+
+# Should git force (overwrite locally changed) clone? (Can also be controlled
+# per repository, see below.
+git_force: no
+
 # The repositories to check out, bootstrap is pinned to a version, java will get HEAD/latest.
 # git_repositories:
 #   - repo: https://github.com/robertdebock/ansible-role-bootstrap.git
@@ -67,6 +72,9 @@ git_repository_destination: /home/{{ git_username }}/Documents/github.com/{{ git
 #     version: 2.2.4
 #   - repo: ssh://git@github.com/robertdebock/ansible-role-java.git
 #     dest: java
+#   - repo: ssh://git@github.com/robertdebock/ansible-role-tomcat.git
+#     dest: tomcat
+#     force: yes
 
 # To update packages this role places on the system, set `git_package_state` to `latest`.
 git_package_state: present
