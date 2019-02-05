@@ -13,8 +13,23 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
-  become: true
+  gather_facts: no
+  become: yes
+  serial: 30%
+
+  vars:
+    git_username: root
+    git_groupname: root
+    git_repository_destination: /root
+    git_repositories:
+      - repo: https://github.com/robertdebock/robertdebock.bootstrap
+        dest: bootstrap
+      - repo: https://github.com/robertdebock/robertdebock.bootstrap
+        dest: bootstrap-force
+        force: yes
+      - repo: https://github.com/robertdebock/robertdebock.bootstrap
+        dest: bootstrap-version
+        version: 2.11.1
 
   roles:
     - role: robertdebock.bootstrap
