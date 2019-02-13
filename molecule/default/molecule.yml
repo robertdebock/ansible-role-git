@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: git-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: git-ubuntu-artful
-    image: ubuntu:artful
+  - name: git-ubuntu-latest
+    image: ubuntu:latest
+  - name: git-ubuntu-rolling
+    image: ubuntu:rolling
   - name: git-ubuntu-devel
     image: ubuntu:devel
 provisioner:
