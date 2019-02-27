@@ -20,8 +20,8 @@
   file:
     path: /home/{{ git_username }}
     state: directory
-    owner: "{{ git_username }}"
-    group: "{{ git_groupname }}"
+    owner: "{{ git_username | default(omit) }}"
+    group: "{{ git_groupname | default(omit) }}"
   when:
     - getent_passwd is defined
     - getent_passwd[git_username] != none
@@ -40,12 +40,11 @@
   file:
     path: "{{ git_repository_destination }}"
     state: directory
-    owner: "{{ git_username }}"
-    group: "{{ git_groupname }}"
+    owner: "{{ git_username | default(omit) }}"
+    group: "{{ git_groupname | default(omit) }}"
   when:
     - git_username is defined
     - git_repository_destination is defined
-    - git_groupname is defined
     - getent_passwd[git_username] != none
 
 - name: clone all roles
