@@ -32,8 +32,6 @@ platforms:
     image: fedora:rawhide
   - name: git-opensuse-leap
     image: opensuse:leap
-  - name: git-opensuse-tumbleweed
-    image: opensuse:tumbleweed
   - name: git-ubuntu-latest
     image: ubuntu:latest
   - name: git-ubuntu-rolling
