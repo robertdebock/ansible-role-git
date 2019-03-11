@@ -29,6 +29,3 @@ git_force: no
 #   - repo: ssh://git@github.com/robertdebock/ansible-role-tomcat.git
 #     dest: tomcat
 #     force: yes
-
-# To update packages this role places on the system, set `git_package_state` to `latest`.
-git_package_state: present

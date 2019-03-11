@@ -3,7 +3,7 @@
 - name: install git
   package:
     name: "{{ git_packages }}"
-    state: "{{ git_package_state }}"
+    state: present
   register: git_install_git
   until: git_install_git is succeeded
   retries: 3
