@@ -16,19 +16,6 @@ This example is taken from `molecule/default/playbook.yml`:
   become: yes
   gather_facts: yes
 
-  roles:
-    - robertdebock.git
-```
-
-The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
-```yaml
----
-- name: Prepare
-  hosts: all
-  gather_facts: no
-  become: yes
-  serial: 30%
-
   vars:
     git_username: root
     git_groupname: root
@@ -42,6 +29,19 @@ The machine you are running this on, may need to be prepared. Tests have been do
       - repo: https://github.com/robertdebock/robertdebock.bootstrap
         dest: bootstrap-version
         version: 2.11.1
+
+  roles:
+    - robertdebock.git
+```
+
+The machine you are running this on, may need to be prepared. Tests have been done on machines prepared by this playbook:
+```yaml
+---
+- name: Prepare
+  hosts: all
+  gather_facts: no
+  become: yes
+  serial: 30%
 
   roles:
     - role: robertdebock.bootstrap
