@@ -12,7 +12,7 @@
   getent:
     database: passwd
     key: "{{ git_username }}"
-    fail_key: no
+    failed_key: no
   when:
     - git_username is defined
 
