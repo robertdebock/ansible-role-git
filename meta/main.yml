@@ -37,7 +37,6 @@ galaxy_info:
 
   galaxy_tags:
     - git
-    - alpine
     - archlinux
     - centos
     - debian
