@@ -19,4 +19,4 @@
         version: 2.11.1
 
   roles:
-    - ansible-role-git
+    - role: ansible-role-git

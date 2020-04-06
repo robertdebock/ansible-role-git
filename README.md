@@ -31,7 +31,7 @@ This example is taken from `molecule/resources/converge.yml` and is tested on ea
         version: 2.11.1
 
   roles:
-    - robertdebock.git
+    - role: robertdebock.git
 ```
 
 The machine may need to be prepared using `molecule/resources/prepare.yml`:
