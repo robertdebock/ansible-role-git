@@ -2,9 +2,9 @@
 
 Install and configure git on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-git.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-git)|[![github](https://github.com/robertdebock/ansible-role-git/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-git/actions)|[![quality](https://img.shields.io/ansible/quality/34950)](https://galaxy.ansible.com/robertdebock/git)|[![downloads](https://img.shields.io/ansible/role/d/34950)](https://galaxy.ansible.com/robertdebock/git)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-git.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-git)|[![github](https://github.com/robertdebock/ansible-role-git/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-git/actions)|[![quality](https://img.shields.io/ansible/quality/34950)](https://galaxy.ansible.com/robertdebock/git)|[![downloads](https://img.shields.io/ansible/role/d/34950)](https://galaxy.ansible.com/robertdebock/git)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-git.svg)](https://github.com/robertdebock/ansible-role-git/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
