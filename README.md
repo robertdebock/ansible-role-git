@@ -68,7 +68,6 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for git
-
 # The system username in /home where to place the gitconfig file.
 # git_username: johndoe
 
@@ -81,7 +80,6 @@ These variables are set in `defaults/main.yml`:
 
 # Where to place the copies of the repositories.
 git_repository_destination: /home/{{ git_username }}/Documents/github.com/{{ git_username }}
-
 
 # Should git force (overwrite locally changed) clone? (Can also be controlled
 # per repository, see below.
