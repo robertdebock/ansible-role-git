@@ -54,6 +54,7 @@
       - item.repo | length > 0
       - item.dest is defined
       - item.dest | length > 0
+    quiet: yes
   loop: "{{ git_repositories }}"
   when:
     - git_repositories is defined
