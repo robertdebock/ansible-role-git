@@ -68,6 +68,7 @@ These variables are set in `defaults/main.yml`:
 ```yaml
 ---
 # defaults file for git
+
 # The system username in /home where to place the gitconfig file.
 # git_username: johndoe
 
