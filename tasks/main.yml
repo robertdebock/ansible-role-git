@@ -7,9 +7,6 @@
   package:
     name: "{{ git_packages }}"
     state: present
-  register: git_install_git
-  until: git_install_git is succeeded
-  retries: 3
 
 - name: see if the specified user exists
   getent:
