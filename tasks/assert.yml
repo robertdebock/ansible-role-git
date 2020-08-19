@@ -3,6 +3,7 @@
   assert:
     that:
       - git_username | length > 0
+    quiet: yes
   when:
     - git_username is defined
 
@@ -10,6 +11,7 @@
   assert:
     that:
       - git_groupname | length > 0
+    quiet: yes
   when:
     - git_groupname is defined
 
@@ -17,6 +19,7 @@
   assert:
     that:
       - git_user_email | length > 0
+    quiet: yes
   when:
     - git_user_email is defined
 
@@ -24,6 +27,7 @@
   assert:
     that:
       - git_user_name | length > 0
+    quiet: yes
   when:
     - git_user_name is defined
 
@@ -32,18 +36,21 @@
     that:
       - git_repository_destination is defined
       - git_repository_destination | length > 0
+    quiet: yes
 
 - name: test if git_force is set correctly
   assert:
     that:
       - git_force is defined
       - git_force | type_debug == "bool"
+    quiet: yes
 
 - name: test if git_repositories is set correctly
   assert:
     that:
       - git_repositories | length > 0
       - git_repositories is iterable
+    quiet: yes
   when:
     - git_repositories is defined
 
@@ -65,6 +72,7 @@
   assert:
     that:
       - item.version | length > 0
+    quiet: yes
   when:
     - git_repositories is defined
     - item.version is defined
@@ -73,6 +81,7 @@
   assert:
     that:
       - item.version | type_debug == "bool"
+    quiet: yes
   when:
     - git_repositories is defined
     - item.force is defined
