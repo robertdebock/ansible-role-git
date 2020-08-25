@@ -22,6 +22,7 @@
     state: directory
     owner: "{{ git_username | default(omit) }}"
     group: "{{ git_groupname | default(omit) }}"
+    mode: "0644"
   when:
     - getent_passwd is defined
     - getent_passwd[git_username] != none
@@ -30,6 +31,7 @@
   template:
     src: gitconfig.j2
     dest: /home/{{ git_username }}/.gitconfig
+    mode: "0644"
   when:
     - git_user_email is defined
     - git_user_name is defined
@@ -42,6 +44,7 @@
     state: directory
     owner: "{{ git_username | default(omit) }}"
     group: "{{ git_groupname | default(omit) }}"
+    mode: "0750"
   when:
     - git_username is defined
     - git_repository_destination is defined
