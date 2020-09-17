@@ -22,7 +22,7 @@
     state: directory
     owner: "{{ git_username | default(omit) }}"
     group: "{{ git_groupname | default(omit) }}"
-    mode: "0644"
+    mode: "0755"
   when:
     - getent_passwd is defined
     - getent_passwd[git_username] != none
