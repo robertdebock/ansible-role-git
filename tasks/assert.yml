@@ -42,7 +42,7 @@
   assert:
     that:
       - git_force is defined
-      - git_force | type_debug == "bool"
+      - git_force is boolean
     quiet: yes
 
 - name: test if git_repositories is set correctly
@@ -80,7 +80,7 @@
 - name: test if item in git_repositories with force is set correctly
   assert:
     that:
-      - item.version | type_debug == "bool"
+      - item.version is boolean
     quiet: yes
   when:
     - git_repositories is defined
