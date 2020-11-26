@@ -1,4 +1,5 @@
 ---
+
 - name: test if git_repository_destination is set correctly
   assert:
     that:
