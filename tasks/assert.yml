@@ -5,6 +5,7 @@
     that:
       - git_repository_destination is defined
       - git_repository_destination is string
+      - git_repository_destination is not none
     quiet: yes
 
 - name: assert | Test if git_force is set correctly
@@ -27,8 +28,10 @@
     that:
       - item.repo is defined
       - item.repo is string
+      - item.repo is not none
       - item.dest is defined
       - item.dest is string
+      - item.dest is not none
     quiet: yes
   loop: "{{ git_repositories }}"
   loop_control:
