@@ -1,4 +1,4 @@
-# Ansible role [git](#git)
+# [Ansible role git](#git)
 
 Install and configure git on your system.
 
