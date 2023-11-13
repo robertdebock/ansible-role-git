@@ -54,7 +54,7 @@
     - git_repository_destination is defined
     - getent_passwd[git_username] != none
 
-- name: Clone all roles
+- name: Clone role
   ansible.builtin.git:
     repo: "{{ item.repo }}"
     dest: "{{ git_repository_destination }}/{{ item.dest }}"
