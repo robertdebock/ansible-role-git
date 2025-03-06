@@ -22,17 +22,17 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
     git_groupname: root
     git_repository_destination: /root
     git_repositories:
-      - repo: "https://github.com/robertdebock/robertdebock.bootstrap"
+      - repo: "https://github.com/robertdebock/ansible-role-bootstrap"
         dest: bootstrap
-      - repo: "https://github.com/robertdebock/robertdebock.bootstrap"
+      - repo: "https://github.com/robertdebock/ansible-role-bootstrap"
         dest: bootstrap-force
         force: true
-      - repo: "https://github.com/robertdebock/robertdebock.bootstrap"
+      - repo: "https://github.com/robertdebock/ansible-role-bootstrap"
         dest: bootstrap-version
         version: "2.11.1"
 
   roles:
-    - role: robertdebock.git
+    - role: ansible-role-git
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-git/blob/master/molecule/default/prepare.yml):
