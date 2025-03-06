@@ -19,4 +19,4 @@
         version: "2.11.1"
 
   roles:
-    - role: ansible-role-git
+    - role: robertdebock.git

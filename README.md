@@ -32,7 +32,7 @@ This example is taken from [`molecule/default/converge.yml`](https://github.com/
         version: "2.11.1"
 
   roles:
-    - role: ansible-role-git
+    - role: robertdebock.git
 ```
 
 The machine needs to be prepared. In CI this is done using [`molecule/default/prepare.yml`](https://github.com/robertdebock/ansible-role-git/blob/master/molecule/default/prepare.yml):
